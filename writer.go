@@ -27,8 +27,8 @@ type DataOutputStream struct {
 	wbuf    []byte
 }
 
-func NewWriter(w io.Writer) DataOutputStream {
-	return DataOutputStream{
+func NewWriter(w io.Writer) *DataOutputStream {
+	return &DataOutputStream{
 		w:       w,
 		wClosed: false,
 		wbuf:    make([]byte, 8),

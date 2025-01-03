@@ -32,8 +32,8 @@ type DataInputStream struct {
 	buf8 []byte
 }
 
-func NewReader(r io.Reader) DataInputStream {
-	return DataInputStream{
+func NewReader(r io.Reader) *DataInputStream {
+	return &DataInputStream{
 		r:    r,
 		buf1: make([]byte, 1),
 		buf2: make([]byte, 2),
